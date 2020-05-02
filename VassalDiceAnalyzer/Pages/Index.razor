@@ -19,92 +19,98 @@
     <div class="col-2"></div>
     <div class="col-6">
         <h1>Vassal Dice Analyzer</h1>
-        <p>Welcome the the Vassal Dice Analyzer. Copy and paste the Vassal log (everything that appears in the chat) into the textbox below and watch just how good you rolled during your last game.</p>
-        <p>Or use one of example <a href="?" @onclick="ViewModel.UseExampleFile1Async">one</a>, <a href="?">two</a> or <a href="?">three</a> if you're just having a look.</p>
-        <hr />
+        @if(ViewModel.PlayerDiceRolls.Count == 0) { 
+            <p>Welcome the the Vassal Dice Analyzer. Copy and paste the Vassal log (everything that appears in the chat) into the textbox below and watch just how good you rolled during your last game.</p>
+            <p>Or use example <a href="?" @onclick="ViewModel.UseExampleFile1Async">one</a> or <a href="?" @onclick="ViewModel.UseExampleFile2Async">two</a> if you're just having a look.</p>
+            <hr />
 
-        <h3>Log file</h3>
+            <h3>Log file</h3>
 
-        <EditForm Model="ViewModel">
-            <InputTextArea cols="80" rows="5" placeholder="Paste Vassal log here" @bind-Value="ViewModel.LogText" />
-            <br />
-            <button class="btn btn-success" @onclick="ViewModel.ParseLogText">Analyze</button>
-        </EditForm>
+            <EditForm Model="ViewModel">
+                <InputTextArea cols="80" rows="5" placeholder="Paste Vassal log here" @bind-Value="ViewModel.LogText" />
+                <br />
+                <button class="btn btn-success" @onclick="ViewModel.ParseLogText" >Analyze</button>
+            </EditForm>
+        }
+        else
+        {
+            <p>Log file parsed. <a href="/" onclick="location.reload()">Click here to parse a new file</a>.</p>
+        }
 
         @if (ViewModel.PlayerDiceRolls != null && ViewModel.PlayerDiceRolls.Any())
         {
-        <hr />
-        <h3>Dice results</h3>
-        <p>This section shows raw numbers rolled.</p>
-        <ChartJsBarChart Config="@ViewModel.DiceResultsBarChartConfig"
-                         Width="600"
-                         Height="300" />
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Player</th>
-                    <th>Dice rolls</th>
-                    <th>Dices rolled</th>
-                    <th>Avg dice pool size</th>
-                    <th>Ones</th>
-                    <th>Twos</th>
-                    <th>Threes</th>
-                    <th>Fours</th>
-                    <th>Fives</th>
-                    <th>Sixes</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var playerSummary in ViewModel.PlayerDiceRolls)
-                {
-                <tr>
-                    <td>@playerSummary.PlayerName</td>
-                    <td>@playerSummary.NrOfRolls</td>
-                    <td>@playerSummary.TotalDicesRolled</td>
-                    <td>@playerSummary.AverageDicePoolSize.ToString("0.##")</td>
-                    <td>@playerSummary.TotalOnesRolled (@ViewModel.ShowPercentageFor(playerSummary.TotalOnesRolled, playerSummary.TotalDicesRolled))</td>
-                    <td>@playerSummary.TotalTwosRolled (@ViewModel.ShowPercentageFor(playerSummary.TotalTwosRolled, playerSummary.TotalDicesRolled))</td>
-                    <td>@playerSummary.TotalThreesRolled (@ViewModel.ShowPercentageFor(playerSummary.TotalThreesRolled, playerSummary.TotalDicesRolled))</td>
-                    <td>@playerSummary.TotalFoursRolled (@ViewModel.ShowPercentageFor(playerSummary.TotalFoursRolled, playerSummary.TotalDicesRolled))</td>
-                    <td>@playerSummary.TotalFivesRolled (@ViewModel.ShowPercentageFor(playerSummary.TotalFivesRolled, playerSummary.TotalDicesRolled))</td>
-                    <td>@playerSummary.TotalSixesRolled (@ViewModel.ShowPercentageFor(playerSummary.TotalSixesRolled, playerSummary.TotalDicesRolled))</td>
-                </tr>
-                }
-            </tbody>
-        </table>
-
-        <hr />
-        <h3>Dice hotness</h3>
-        <p>This section shows how hot the rolls were by calculating the average value of the dice in each roll and presenting how many rolls fall into each interval.</p>
-            @foreach (var diceHotnessChartConfig in ViewModel.DiceHotnessChartConfigs)
-            {
-        <ChartJsBarChart Config="@diceHotnessChartConfig" Width="600" Height="200" />
-            }
-            <div style="overflow-x: scroll">
+                <hr />
+                <h3>Dice results</h3>
+                <p>This section shows raw numbers rolled.</p>
+                <ChartJsBarChart Config="@ViewModel.DiceResultsBarChartConfig"
+                                 Width="600"
+                                 Height="300" />
                 <table class="table">
                     <thead>
-                    <tr>
-                        <th>Player</th>
-                        @foreach (var averageSection in ViewModel.PlayerDiceRolls[0].RollAverages)
-                        {
-                            <th>@averageSection.RangeMin - @averageSection.RangeMax</th>
-                        }
-                    </tr>
+                        <tr>
+                            <th>Player</th>
+                            <th>Dice rolls</th>
+                            <th>Dices rolled</th>
+                            <th>Avg dice pool size</th>
+                            <th>Ones</th>
+                            <th>Twos</th>
+                            <th>Threes</th>
+                            <th>Fours</th>
+                            <th>Fives</th>
+                            <th>Sixes</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    @foreach (var player in ViewModel.PlayerDiceRolls)
-                    {
-                        <tr>
-                            <td>@player.PlayerName</td>
-                            @foreach (var average in player.RollAverages)
-                            {
-                                <td>@average.Count</td>
-                            }
-                        </tr>
-                    }
+                        @foreach (var playerSummary in ViewModel.PlayerDiceRolls)
+                        {
+                            <tr>
+                                <td>@playerSummary.PlayerName</td>
+                                <td>@playerSummary.NrOfRolls</td>
+                                <td>@playerSummary.TotalDicesRolled</td>
+                                <td>@playerSummary.AverageDicePoolSize.ToString("0.##")</td>
+                                <td>@playerSummary.TotalOnesRolled (@ViewModel.ShowPercentageFor(playerSummary.TotalOnesRolled, playerSummary.TotalDicesRolled))</td>
+                                <td>@playerSummary.TotalTwosRolled (@ViewModel.ShowPercentageFor(playerSummary.TotalTwosRolled, playerSummary.TotalDicesRolled))</td>
+                                <td>@playerSummary.TotalThreesRolled (@ViewModel.ShowPercentageFor(playerSummary.TotalThreesRolled, playerSummary.TotalDicesRolled))</td>
+                                <td>@playerSummary.TotalFoursRolled (@ViewModel.ShowPercentageFor(playerSummary.TotalFoursRolled, playerSummary.TotalDicesRolled))</td>
+                                <td>@playerSummary.TotalFivesRolled (@ViewModel.ShowPercentageFor(playerSummary.TotalFivesRolled, playerSummary.TotalDicesRolled))</td>
+                                <td>@playerSummary.TotalSixesRolled (@ViewModel.ShowPercentageFor(playerSummary.TotalSixesRolled, playerSummary.TotalDicesRolled))</td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
-            </div>
+
+                <hr />
+                <h3>Dice hotness</h3>
+                <p>This section shows how hot the rolls were by calculating the average value of the dice in each roll and presenting how many rolls fall into each interval.</p>
+                @foreach (var diceHotnessChartConfig in ViewModel.DiceHotnessChartConfigs)
+                {
+                    <ChartJsBarChart Config="@diceHotnessChartConfig" Width="600" Height="200" />
+                }
+                <div style="overflow-x: scroll">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Player</th>
+                                    @foreach (var averageSection in ViewModel.PlayerDiceRolls[0].RollAverages)
+                                    {
+                                        <th>@averageSection.RangeMin - @averageSection.RangeMax</th>
+                                    }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var player in ViewModel.PlayerDiceRolls)
+                            {
+                                <tr>
+                                    <td>@player.PlayerName</td>
+                                    @foreach (var average in player.RollAverages)
+                                    {
+                                        <td>@average.Count</td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
         }
     </div>
     <div class="col-2">

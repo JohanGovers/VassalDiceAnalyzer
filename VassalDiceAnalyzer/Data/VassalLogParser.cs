@@ -22,6 +22,11 @@ namespace VassalDiceAnalyzer.Data
         public List<PlayerDiceRolls> ParseLog(string log)
         {
             var result = new List<PlayerDiceRolls>();
+            if (string.IsNullOrWhiteSpace(log))
+            {
+                return result;
+            }
+
             var rows = log.Split('\n');
             foreach (var row in rows)
             {

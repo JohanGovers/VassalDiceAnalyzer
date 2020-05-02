@@ -73,5 +73,15 @@ namespace VassalDiceAnalyzer.Tests
             Assert.Equal(1, result[1].TotalFivesRolled);
             Assert.Equal(1, result[1].TotalSixesRolled);
         }
+
+        [Fact]
+        public void ParsingNullResultsInAnEmptyList()
+        {
+            var parser = new VassalLogParser(new DiceRollRowParser());
+
+            var result = parser.ParseLog(null);
+
+            Assert.Empty(result);
+        }
     }
 }

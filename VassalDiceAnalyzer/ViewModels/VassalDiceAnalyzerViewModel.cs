@@ -21,10 +21,11 @@ namespace VassalDiceAnalyzer.ViewModels
         public void ParseLogText();
         public List<PlayerDiceRolls> PlayerDiceRolls { get; }
         public BarConfig DiceResultsBarChartConfig { get; }
-        public BarConfig[] DiceHotnessChartConfigs { get; }
+        public List<BarConfig> DiceHotnessChartConfigs { get; }
 
         string ShowPercentageFor(int x, int y);
         Task UseExampleFile1Async();
+        Task UseExampleFile2Async();
     }
 
     public class VassalDiceAnalyzerViewModel : IVassalDiceAnalyzerViewModel
@@ -40,7 +41,7 @@ namespace VassalDiceAnalyzer.ViewModels
         public List<PlayerDiceRolls> PlayerDiceRolls { get; set; }
 
         public BarConfig DiceResultsBarChartConfig { get; private set; }
-        public BarConfig[] DiceHotnessChartConfigs { get; private set; }
+        public List<BarConfig> DiceHotnessChartConfigs { get; private set; } = new List<BarConfig>();
         
         public VassalDiceAnalyzerViewModel(IVassalLogParser logParser, ISampleDataLoader sampleDataLoader)
         {
@@ -51,12 +52,19 @@ namespace VassalDiceAnalyzer.ViewModels
         
         public void ParseLogText()
         {
-            PlayerDiceRolls.Clear();
+            ClearData();
 
             PlayerDiceRolls =_logParser.ParseLog(LogText);
 
             UpdateDiceResultsChart();
             UpdateDiceHotnessCharts();
+        }
+
+        private void ClearData()
+        {
+            PlayerDiceRolls.Clear();
+            DiceHotnessChartConfigs.Clear();
+            DiceResultsBarChartConfig = new BarConfig();
         }
 
         private void UpdateDiceResultsChart()
@@ -125,7 +133,6 @@ namespace VassalDiceAnalyzer.ViewModels
 
         private void UpdateDiceHotnessCharts()
         {
-            var diceHotnessChartConfigs = new List<BarConfig>();
             for (var index = 0; index < PlayerDiceRolls.Count; index++)
             {
                 var player = PlayerDiceRolls[index];
@@ -178,10 +185,8 @@ namespace VassalDiceAnalyzer.ViewModels
                 barDataSet.AddRange(player.RollAverages.Select(a => (double)a.Count).ToArray().Wrap());
 
                 diceHotnessConfig.Data.Datasets.Add(barDataSet);
-                diceHotnessChartConfigs.Add(diceHotnessConfig);
+                DiceHotnessChartConfigs.Add(diceHotnessConfig);
             }
-
-            DiceHotnessChartConfigs = diceHotnessChartConfigs.ToArray();
         }
 
         public string ShowPercentageFor(int x, int y)
@@ -198,6 +203,11 @@ namespace VassalDiceAnalyzer.ViewModels
         public async Task UseExampleFile1Async()
         {
             LogText = await _sampleDataLoader.GetSample1Async();
+        }
+
+        public async Task UseExampleFile2Async()
+        {
+            LogText = await _sampleDataLoader.GetSample2Async();
         }
     }
 }
