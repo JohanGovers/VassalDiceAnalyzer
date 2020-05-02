@@ -1,21 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using ChartJs.Blazor.ChartJS.BarChart;
 using ChartJs.Blazor.ChartJS.BarChart.Axes;
-using ChartJs.Blazor.ChartJS.Common;
 using ChartJs.Blazor.ChartJS.Common.Axes;
 using ChartJs.Blazor.ChartJS.Common.Axes.Ticks;
-using ChartJs.Blazor.ChartJS.Common.Enums;
-using ChartJs.Blazor.ChartJS.Common.Handlers;
 using ChartJs.Blazor.ChartJS.Common.Properties;
 using ChartJs.Blazor.ChartJS.Common.Wrappers;
-using ChartJs.Blazor.ChartJS.LineChart;
-using ChartJs.Blazor.Charts;
 using ChartJs.Blazor.Util;
-using Microsoft.AspNetCore.Components.Web;
 using VassalDiceAnalyzer.Data;
 using VassalDiceAnalyzer.Data.Samples;
 using VassalDiceAnalyzer.Domain;
@@ -25,6 +18,7 @@ namespace VassalDiceAnalyzer.ViewModels
     public interface IVassalDiceAnalyzerViewModel
     {
         public string LogText { get; set; }
+        public void ParseLogText();
         public List<PlayerDiceRolls> PlayerDiceRolls { get; }
         public BarConfig DiceResultsBarChartConfig { get; }
         public BarConfig[] DiceHotnessChartConfigs { get; }
@@ -40,17 +34,8 @@ namespace VassalDiceAnalyzer.ViewModels
 
         private readonly IVassalLogParser _logParser;
         private readonly ISampleDataLoader _sampleDataLoader;
-        private string _logText;
 
-        public string LogText
-        {
-            get => _logText;
-            set
-            {
-                _logText = value;
-                ParseLogText();
-            }
-        }
+        public string LogText { get; set; }
 
         public List<PlayerDiceRolls> PlayerDiceRolls { get; set; }
 

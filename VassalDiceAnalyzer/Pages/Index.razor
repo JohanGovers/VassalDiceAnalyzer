@@ -20,7 +20,7 @@
     <div class="col-6">
         <h1>Vassal Dice Analyzer</h1>
         <p>Welcome the the Vassal Dice Analyzer. Copy and paste the Vassal log (everything that appears in the chat) into the textbox below and watch just how good you rolled during your last game.</p>
-        <p>Or use one of example <a href="?" @onclick="ViewModel.UseExampleFile1Async">one</a>, <a href="?">two </a> or <a href="?">three</a> if you're just having a look.</p>
+        <p>Or use one of example <a href="?" @onclick="ViewModel.UseExampleFile1Async">one</a>, <a href="?">two</a> or <a href="?">three</a> if you're just having a look.</p>
         <hr />
 
         <h3>Log file</h3>
@@ -28,7 +28,7 @@
         <EditForm Model="ViewModel">
             <InputTextArea cols="80" rows="5" placeholder="Paste Vassal log here" @bind-Value="ViewModel.LogText" />
             <br />
-            <button class="btn btn-primary">Click here, or anywhere else outside the textbox, to parse the log.</button>
+            <button class="btn btn-success" @onclick="ViewModel.ParseLogText">Analyze</button>
         </EditForm>
 
         @if (ViewModel.PlayerDiceRolls != null && ViewModel.PlayerDiceRolls.Any())
