@@ -27,7 +27,7 @@
             <h3>Log file</h3>
 
             <EditForm Model="ViewModel">
-                <InputTextArea cols="80" rows="5" placeholder="Paste Vassal log here" @bind-Value="ViewModel.LogText" />
+                <InputTextArea style="width: 100%" rows="5" placeholder="Paste Vassal log here" @bind-Value="ViewModel.LogText" />
                 <br />
                 <button class="btn btn-success" @onclick="ViewModel.ParseLogText" >Analyze</button>
             </EditForm>
@@ -45,8 +45,9 @@
                 <ChartJsBarChart Config="@ViewModel.DiceResultsBarChartConfig"
                                  Width="600"
                                  Height="300" />
-                <table class="table">
-                    <thead>
+                <div style="overflow-x: scroll">
+                    <table class="table">
+                        <thead>
                         <tr>
                             <th>Player</th>
                             <th>Dice rolls</th>
@@ -59,8 +60,8 @@
                             <th>Fives</th>
                             <th>Sixes</th>
                         </tr>
-                    </thead>
-                    <tbody>
+                        </thead>
+                        <tbody>
                         @foreach (var playerSummary in ViewModel.PlayerDiceRolls)
                         {
                             <tr>
@@ -76,8 +77,9 @@
                                 <td>@playerSummary.TotalSixesRolled (@ViewModel.ShowPercentageFor(playerSummary.TotalSixesRolled, playerSummary.TotalDicesRolled))</td>
                             </tr>
                         }
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>    
 
                 <hr />
                 <h3>Dice hotness</h3>
