@@ -15,6 +15,16 @@ namespace VassalDiceAnalyzer.Domain
 
         public string PlayerName { get; }
 
+        public float TotalAverageResult
+        {
+            get
+            {
+                return DiceRolls.Sum(r =>
+                           r.Ones + 2 * r.Twos + 3 * r.Threes + 4 * r.Fours + 5 * r.Fives + 6 * r.Sixes) /
+                       (float)DiceRolls.Sum(r => r.DicesRolled);
+            }
+        }
+
         public int TotalDicesRolled
         {
             get { return DiceRolls.Sum(r => r.DicesRolled); }

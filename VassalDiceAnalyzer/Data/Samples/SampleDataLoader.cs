@@ -24,36 +24,110 @@ namespace VassalDiceAnalyzer.Data.Samples
 
  - Waiting for Game Info...
  - Synchronization complete
-* Player One rolled 11 Dice - 2+:8  -  3+:7  -  4+:4  -  5+:3  -  6+:1
-* Player One rolled 7 Dice - 2+:5  -  3+:5  -  4+:3  -  5+:2  -  6+:1
-* Player Two rolled 5 Dice - 2+:5  -  3+:4  -  4+:3  -  5+:2  -  6+:1
-* Player One rolled 4 Dice - 2+:2  -  3+:1  -  4+:1  -  5+:1  -  6+:1
-* Player One rolled 6 Dice - 2+:6  -  3+:6  -  4+:6  -  5+:5  -  6+:1
-* Player Two rolled 9 Dice - 2+:8  -  3+:8  -  4+:6  -  5+:6  -  6+:1
-* Player Two rolled 5 Dice - 2+:4  -  3+:2  -  4+:1  -  5+:1  -  6+:0
-* Player Two rolled 5 Dice - 2+:4  -  3+:2  -  4+:1  -  5+:1  -  6+:0
-* Player One rolled 7 Dice - 2+:4  -  3+:3  -  4+:2  -  5+:0  -  6+:0
-* Player One rolled 7 Dice - 2+:7  -  3+:6  -  4+:4  -  5+:3  -  6+:1
-* Player One rolled 7 Dice - 2+:6  -  3+:5  -  4+:4  -  5+:0  -  6+:0
-* Player Two rolled 4 Dice - 2+:4  -  3+:3  -  4+:1  -  5+:0  -  6+:0
-* The Visiting Team has scored a Goal! Score is now 0:1
-* Visiting Team rolls a 3 for direction and a 1 for distance *
-* Player Two rolled 10 Dice - 2+:9  -  3+:8  -  4+:7  -  5+:3  -  6+:3
-* Player Two rolled 12 Dice - 2+:12  -  3+:11  -  4+:6  -  5+:4  -  6+:2
+<Player One> - RFVA
+* Home Team rolled a 1 *
+* Visiting Team rolled a 5 *
+* VISITING TEAM HAS WON INITIATIVE *
+<Player One> - Rage
+<Player Two> - Rivet /Mainspring
+* Player Two rolled 4 Dice - 2+:3  -  3+:2  -  4+:1  -  5+:1  -  6+:0
+* Home Team rolls a 6 for direction and a 6 for distance *
+* UNDO: * Home Team rolls a 6 for direction and a 6 for distance *
+* Home Team rolls a 6 for direction and a 6 for distance *
+* Player One rolled 3 Dice - 2+:3  -  3+:2  -  4+:2  -  5+:1  -  6+:0
+* Player One rolled 2 Dice - 2+:0  -  3+:0  -  4+:0  -  5+:0  -  6+:0
+* Visiting Team rolls a 1 for direction and a 1 for distance *
+* Player One rolled 9 Dice - 2+:9  -  3+:7  -  4+:4  -  5+:3  -  6+:2
+* Player One rolled 4 Dice - 2+:3  -  3+:2  -  4+:2  -  5+:0  -  6+:0
+* Player One rolled 6 Dice - 2+:4  -  3+:3  -  4+:3  -  5+:2  -  6+:1
+* Player Two rolled 6 Dice - 2+:3  -  3+:3  -  4+:2  -  5+:1  -  6+:0
+* Player One rolled 3 Dice - 2+:3  -  3+:2  -  4+:1  -  5+:1  -  6+:1
+* Player One rolled 10 Dice - 2+:9  -  3+:9  -  4+:6  -  5+:3  -  6+:2
+* Player One rolled 4 Dice - 2+:4  -  3+:2  -  4+:1  -  5+:1  -  6+:1
+* Player One rolled 6 Dice - 2+:6  -  3+:6  -  4+:4  -  5+:4  -  6+:3
+* Player Two rolled 7 Dice - 2+:6  -  3+:6  -  4+:5  -  5+:3  -  6+:0
+* Player Two rolled 6 Dice - 2+:5  -  3+:4  -  4+:4  -  5+:2  -  6+:0
+* Player Two rolled 5 Dice - 2+:5  -  3+:3  -  4+:2  -  5+:2  -  6+:1
+* Player Two rolled 5 Dice - 2+:5  -  3+:5  -  4+:5  -  5+:3  -  6+:2
+* Player One rolled 3 Dice - 2+:3  -  3+:3  -  4+:2  -  5+:1  -  6+:0
+* Player One rolled 12 Dice - 2+:11  -  3+:8  -  4+:4  -  5+:3  -  6+:1
+* Player One rolled 11 Dice - 2+:8  -  3+:6  -  4+:4  -  5+:3  -  6+:2
+* Player One rolled 8 Dice - 2+:6  -  3+:5  -  4+:5  -  5+:4  -  6+:2
+* Player One rolled 7 Dice - 2+:6  -  3+:6  -  4+:6  -  5+:2  -  6+:1
+* Player One rolled 7 Dice - 2+:7  -  3+:6  -  4+:6  -  5+:3  -  6+:1
+* Player One rolled 7 Dice - 2+:5  -  3+:4  -  4+:3  -  5+:3  -  6+:2
+* Player One rolled 7 Dice - 2+:4  -  3+:3  -  4+:3  -  5+:3  -  6+:1
+* Player Two rolled 6 Dice - 2+:5  -  3+:3  -  4+:3  -  5+:2  -  6+:0
+* Player Two rolled 6 Dice - 2+:5  -  3+:3  -  4+:3  -  5+:3  -  6+:1
+* Player Two rolled 6 Dice - 2+:5  -  3+:5  -  4+:4  -  5+:2  -  6+:0
+* Player One rolled 8 Dice - 2+:8  -  3+:7  -  4+:6  -  5+:3  -  6+:2
+* Player One rolled 7 Dice - 2+:6  -  3+:4  -  4+:4  -  5+:3  -  6+:2
 * Visiting Team has taken-out 1 Player 
-* Player Two rolled 6 Dice - 2+:6  -  3+:6  -  4+:3  -  5+:1  -  6+:1
-* Player Two rolled 6 Dice - 2+:4  -  3+:3  -  4+:3  -  5+:2  -  6+:2
+* Player One rolled 9 Dice - 2+:6  -  3+:6  -  4+:4  -  5+:1  -  6+:0
+* Player Two rolled 10 Dice - 2+:8  -  3+:6  -  4+:5  -  5+:2  -  6+:0
+* Player Two rolled 6 Dice - 2+:5  -  3+:4  -  4+:4  -  5+:3  -  6+:3
+* Player Two rolled 6 Dice - 2+:5  -  3+:3  -  4+:1  -  5+:1  -  6+:1
+* Player One rolled 11 Dice - 2+:8  -  3+:7  -  4+:6  -  5+:3  -  6+:2
+* Player One rolled 7 Dice - 2+:5  -  3+:5  -  4+:2  -  5+:2  -  6+:0
+* Player One rolled 12 Dice - 2+:10  -  3+:8  -  4+:4  -  5+:3  -  6+:2
+* Player One rolled 16 Dice - 2+:12  -  3+:8  -  4+:6  -  5+:4  -  6+:2
+* Player Two rolled 4 Dice - 2+:2  -  3+:1  -  4+:0  -  5+:0  -  6+:0
+* Player One rolled 11 Dice - 2+:11  -  3+:8  -  4+:7  -  5+:5  -  6+:2
+* Player One rolled 2 Dice - 2+:2  -  3+:1  -  4+:1  -  5+:1  -  6+:0
+* Player Two rolled 6 Dice - 2+:4  -  3+:4  -  4+:3  -  5+:2  -  6+:1
+* Player Two rolled 7 Dice - 2+:6  -  3+:4  -  4+:4  -  5+:3  -  6+:2
+* Player One rolled 6 Dice - 2+:3  -  3+:1  -  4+:1  -  5+:0  -  6+:0
+* Player Two rolled 7 Dice - 2+:7  -  3+:6  -  4+:5  -  5+:2  -  6+:2
+* Player Two rolled 8 Dice - 2+:4  -  3+:2  -  4+:2  -  5+:1  -  6+:1
+* Player One rolled 15 Dice - 2+:14  -  3+:12  -  4+:12  -  5+:10  -  6+:8
 * Visiting Team has taken-out 2 Players 
-* Player Two rolled 7 Dice - 2+:7  -  3+:7  -  4+:5  -  5+:5  -  6+:2
-* Player Two rolled 6 Dice - 2+:5  -  3+:5  -  4+:4  -  5+:3  -  6+:0
+* Player One rolled 8 Dice - 2+:6  -  3+:5  -  4+:3  -  5+:2  -  6+:0
+* Player One rolled 9 Dice - 2+:5  -  3+:5  -  4+:4  -  5+:2  -  6+:2
 * Visiting Team has taken-out 3 Players 
-* Player Two rolled 6 Dice - 2+:6  -  3+:6  -  4+:4  -  5+:3  -  6+:2
-* Player Two rolled 7 Dice - 2+:4  -  3+:4  -  4+:4  -  5+:1  -  6+:1
-* Player One rolled 7 Dice - 2+:5  -  3+:4  -  4+:3  -  5+:2  -  6+:1
-* Player One rolled 7 Dice - 2+:6  -  3+:6  -  4+:4  -  5+:3  -  6+:1
-* Player One rolled 8 Dice - 2+:7  -  3+:5  -  4+:5  -  5+:4  -  6+:1
+<Player One> - Minx 13
+* Player Two rolled 4 Dice - 2+:4  -  3+:2  -  4+:1  -  5+:0  -  6+:0
+* Player One rolled 3 Dice - 2+:3  -  3+:3  -  4+:1  -  5+:1  -  6+:1
+* Player One rolled 10 Dice - 2+:7  -  3+:4  -  4+:4  -  5+:4  -  6+:3
+<Player One> - Minx 14
+* Player One rolled 8 Dice - 2+:4  -  3+:4  -  4+:3  -  5+:2  -  6+:1
+* Player One rolled 8 Dice - 2+:7  -  3+:6  -  4+:4  -  5+:2  -  6+:2
+* Player One rolled 8 Dice - 2+:7  -  3+:5  -  4+:4  -  5+:3  -  6+:2
+* Player One rolled 8 Dice - 2+:7  -  3+:5  -  4+:4  -  5+:4  -  6+:1
+* Player Two rolled 11 Dice - 2+:8  -  3+:6  -  4+:4  -  5+:3  -  6+:0
+* Player Two rolled 7 Dice - 2+:7  -  3+:5  -  4+:2  -  5+:2  -  6+:0
+* Player Two rolled 7 Dice - 2+:7  -  3+:6  -  4+:3  -  5+:1  -  6+:0
+* Player Two rolled 8 Dice - 2+:8  -  3+:6  -  4+:2  -  5+:2  -  6+:1
+* Player Two rolled 8 Dice - 2+:6  -  3+:5  -  4+:5  -  5+:3  -  6+:1
+* Player One rolled 6 Dice - 2+:4  -  3+:3  -  4+:3  -  5+:2  -  6+:2
+* Player One rolled 6 Dice - 2+:5  -  3+:5  -  4+:4  -  5+:4  -  6+:3
+* Player One rolled 6 Dice - 2+:4  -  3+:3  -  4+:2  -  5+:2  -  6+:1
+* Visiting Team has taken-out 4 Players 
+* Player One rolled 13 Dice - 2+:11  -  3+:10  -  4+:7  -  5+:6  -  6+:5
+* Player Two rolled 8 Dice - 2+:8  -  3+:8  -  4+:8  -  5+:8  -  6+:4
+* Player Two rolled 8 Dice - 2+:7  -  3+:6  -  4+:5  -  5+:1  -  6+:0
+* Player Two rolled 6 Dice - 2+:6  -  3+:6  -  4+:4  -  5+:2  -  6+:1
+* Player Two rolled 2 Dice - 2+:2  -  3+:1  -  4+:0  -  5+:0  -  6+:0
+* Player Two rolled 2 Dice - 2+:2  -  3+:1  -  4+:1  -  5+:1  -  6+:0
 * Home Team has taken-out 1 Player 
-* Player Two rolled 5 Dice - 2+:5  -  3+:5  -  4+:5  -  5+:4  -  6+:0");
+* Player One rolled 7 Dice - 2+:4  -  3+:3  -  4+:1  -  5+:0  -  6+:0
+* Player One rolled 7 Dice - 2+:5  -  3+:3  -  4+:1  -  5+:1  -  6+:1
+* Player One rolled 9 Dice - 2+:9  -  3+:7  -  4+:5  -  5+:3  -  6+:1
+* Player One rolled 9 Dice - 2+:8  -  3+:8  -  4+:7  -  5+:5  -  6+:2
+* Player One rolled 10 Dice - 2+:8  -  3+:6  -  4+:5  -  5+:3  -  6+:2
+* Player One rolled 6 Dice - 2+:6  -  3+:4  -  4+:4  -  5+:3  -  6+:0
+* Player One rolled 8 Dice - 2+:8  -  3+:5  -  4+:4  -  5+:4  -  6+:2
+* Player One rolled 7 Dice - 2+:5  -  3+:4  -  4+:2  -  5+:1  -  6+:0
+* Player Two rolled 6 Dice - 2+:6  -  3+:5  -  4+:4  -  5+:4  -  6+:3
+* Player Two rolled 6 Dice - 2+:6  -  3+:4  -  4+:3  -  5+:2  -  6+:0
+* Player Two rolled 7 Dice - 2+:6  -  3+:4  -  4+:1  -  5+:1  -  6+:0
+* Player Two rolled 7 Dice - 2+:5  -  3+:4  -  4+:3  -  5+:2  -  6+:0
+* Player Two rolled 7 Dice - 2+:5  -  3+:5  -  4+:5  -  5+:3  -  6+:1
+* Player One rolled 8 Dice - 2+:7  -  3+:7  -  4+:6  -  5+:6  -  6+:5
+* Player One rolled 7 Dice - 2+:7  -  3+:6  -  4+:4  -  5+:4  -  6+:0
+* Player One rolled 8 Dice - 2+:6  -  3+:4  -  4+:3  -  5+:3  -  6+:2
+* Player One rolled 8 Dice - 2+:4  -  3+:3  -  4+:1  -  5+:0  -  6+:0
+* Visiting Team has taken-out 5 Players 
+* Visiting Team has taken-out 6 Players ");
         }
 
         public async Task<string> GetSample2Async()

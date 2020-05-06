@@ -116,5 +116,23 @@ namespace VassalDiceAnalyzer.Tests
 
             Assert.Equal(4, playerRolls.NrOfRolls);
         }
+
+        [Fact]
+        public void CanCalculateTotalAverageResult()
+        {
+            var playerRolls = new PlayerDiceRolls("test");
+            playerRolls.AddDiceRoll(new DiceRoll { PlayerName = "test", DicesRolled = 2, Fours = 1, Twos = 1 });
+            playerRolls.AddDiceRoll(new DiceRoll { PlayerName = "test", DicesRolled = 3, Fours = 2, Ones = 1 });
+            Assert.Equal(3, playerRolls.TotalAverageResult);
+        }
+
+        [Fact]
+        public void CanCalculateTotalAverageResultWithDecimalResult()
+        {
+            var playerRolls = new PlayerDiceRolls("test");
+            playerRolls.AddDiceRoll(new DiceRoll { PlayerName = "test", DicesRolled = 2, Fours = 1, Threes = 1 });
+            playerRolls.AddDiceRoll(new DiceRoll { PlayerName = "test", DicesRolled = 4, Fours = 2, Threes = 2 });
+            Assert.Equal(3.5, playerRolls.TotalAverageResult);
+        }
     }
 }
